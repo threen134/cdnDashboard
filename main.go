@@ -9,6 +9,7 @@ func main() {
 	beego.BConfig.WebConfig.TemplateLeft = "<<<"
 	beego.BConfig.WebConfig.TemplateRight = ">>>"
 	beego.BConfig.WebConfig.AutoRender = true
+	beego.SetLogger("file", `{"filename":"logs/test.log"}`)
 
 	beego.Run()
 }
