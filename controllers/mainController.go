@@ -8,18 +8,30 @@ type MainController struct {
 	beego.Controller
 }
 
-func (c *MainController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
-	c.TplName = "index.html"
-}
+// func (c *MainController) Get() {
+// 	c.Layout = "layout.tpl"
+// 	c.LayoutSections = make(map[string]string)
+// 	c.LayoutSections["PageContent"] = "instances.tpl"
+// 	c.LayoutSections["SideBare"] = "sidebar.tpl"
+// 	c.TplName = "instances.tpl"
+// }
 
-// @router /index [get]
-func (c *MainController) Index() {
-	c.TplName = "index.html"
-}
+// // @router /index [get]
+// func (c *MainController) Index() {
+// 	c.Layout = "layout.tpl"
+// 	c.LayoutSections = make(map[string]string)
+// 	c.LayoutSections["PageContent"] = "instances.tpl"
+// 	c.LayoutSections["SideBare"] = "sidebar.tpl"
+// 	c.TplName = "instances.tpl"
+// }
 
 // @router  /instances [get]
 func (c *MainController) Instances() {
-	c.TplName = "instances.html"
+	c.Layout = "layout.tpl"
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["PageContent"] = "instances.tpl"
+	c.LayoutSections["SideBar"] = "sidebar.tpl"
+	c.LayoutSections["CSS"] = "css.tpl"
+	c.LayoutSections["JS"] = "js.tpl"
+	c.TplName = "instances.tpl"
 }
